@@ -1,0 +1,40 @@
+@use "../healpers" as *;
+/* Animations */
+@keyframes scrolling-sticky {
+  to {
+    // box-shadow: 0 0 10rem 1rem var(--color-black-opacity-80);
+  }
+}
+
+// @keyframes scale-off {
+//   0% {
+//     scale: 0;
+//   }
+//   100% {
+//     scale: 1;
+//   }
+// }
+
+// @keyframes show-modal {
+//   0% {
+//     scale: 0.75;
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//     scale: 1;
+//   }
+// }
+
+// @keyframes hide-unit {
+//   0%,
+//   1% {
+//     visibility: visible;
+//   }
+//   100% {
+//     visibility: hidden;
+//     display: none;
+//   }
+// }
+/*  ===================================  */
+/*  ===================================  */

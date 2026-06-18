@@ -1,0 +1,84 @@
+@use "../healpers" as *;
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+body {
+  @include fluid-text(20, 14);
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--second-family);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+main {
+  flex-grow: 1;
+}
+//titles
+h1,
+.h1 {
+  @include fluid-text(100, 40);
+  line-height: 1;
+}
+h2,
+.h2 {
+  @include fluid-text(60, 35);
+  line-height: 1.2;
+}
+// h3,
+// .h3 {
+//   @include fluid-text(40, 24);
+// }
+// h4,
+// .h4 {
+//   @include fluid-text(26, 18);
+// }
+// h5,
+// .h5 {
+//   @include fluid-text(24, 18);
+// }
+// h6,
+// .h6 {
+//   @include fluid-text(20, 16);
+// }
+
+// for animation hover/active
+a,
+button,
+input,
+textarea,
+label,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+// for links
+a {
+  color: inherit;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+
+      content: "";
+    }
+  }
+}

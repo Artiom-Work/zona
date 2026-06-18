@@ -1,0 +1,25 @@
+@use "../healpers" as *;
+
+:root {
+  --color-light: #ffffff;
+  --color-dark: #221f1f;
+
+  --color-green: #34825b;
+  --color-red: #dc5d4a;
+  --color-orange: #eb671d;
+  --color-lima: #e5ea90;
+  --color-manga: #f3e0a6;
+  --color-guarana: #efdbc3;
+
+  --color-accent-1: var(--color-green);
+  --color-accent-2: var(--color-red);
+
+  --font-family: "ClashDisplay", sans-serif;
+  --second-family: "RedHatDisplay", sans-serif;
+
+  --container-width: #{rem(1620)};
+  --container-padding-x: #{rem(15)};
+  --header-height: #{rem(90)};
+
+  --transition-duration: 0.3s;
+}
