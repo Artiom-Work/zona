@@ -12,7 +12,7 @@
 	 Убираем внутренние отступы слева тегам списков,
 	 у которых есть атрибут class
 	*/
-:where(ul, ol):where([class]) {
+:where(ul, ol) {
   padding-left: 0;
 }
 
@@ -433,6 +433,10 @@ button[aria-label]::before {
   width: 8.8125rem;
   height: 2rem;
 }
+.logo--footer {
+  width: 11.4375rem;
+  height: 2.5625rem;
+}
 .logo__image {
   width: inherit;
   height: inherit;
@@ -455,6 +459,10 @@ button[aria-label]::before {
   .logo {
     width: 4.25rem;
     height: 0.9375rem;
+  }
+  .logo--footer {
+    width: 11.4375rem;
+    height: 2.5625rem;
   }
 }
 .nav__list {
@@ -613,6 +621,95 @@ button[aria-label]::before {
 @media (width <= 47.99875rem) {
   .header .container {
     padding-inline: 1.75rem;
+  }
+}
+.footer {
+  padding-block: 3.75rem 3.4375rem;
+}
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 0.625rem;
+}
+.footer__right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  color: var(--color-dark);
+  font-family: var(--font-family);
+  line-height: 1.81818;
+  gap: 11.25rem;
+  padding-right: 2.4375rem;
+}
+.footer__right a {
+  font-size: clamp(0.875rem, 0.7519230769rem + 0.6153846154vw, 1.375rem);
+  position: relative;
+  text-decoration: none;
+}
+@media (any-hover: hover) {
+  .footer__right a:hover::after {
+    width: 100%;
+  }
+}
+@media (any-hover: hover) and (any-hover: none) {
+  .footer__right a:active::after {
+    width: 100%;
+  }
+}
+.footer__right a:active {
+  scale: 0.98;
+  opacity: 0.5;
+}
+.footer__right a::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50%;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition-duration: inherit;
+}
+.footer__copyright {
+  font-weight: 500;
+}
+.footer__nav {
+  gap: 1.75rem;
+  font-weight: 600;
+}
+.footer__nav ul {
+  display: flex;
+  justify-content: end;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+}
+.footer__nav li {
+  padding: 0.625rem;
+}
+
+@media (width <= 101.24875rem) {
+  .footer__right {
+    display: contents;
+    padding-right: 0;
+  }
+}
+@media (width <= 63.99875rem) {
+  .footer {
+    padding-block: 3.75rem 1.25rem;
+  }
+  .footer .container, .footer__right {
+    flex-direction: column;
+    line-height: 2.85714;
+  }
+  .footer__logo {
+    margin-bottom: 1.625rem;
+  }
+  .footer__nav ul {
+    gap: 2.0625rem;
+    margin-top: 0.3125rem;
   }
 }
 
