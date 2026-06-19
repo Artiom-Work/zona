@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -17,12 +17,57 @@
 </head>
 
 <body>
-	<header class="header container">
-		Header
+	<header class="header">
+		<div class="container">
+			<a class="logo" href="index.html">
+				<img class="logo__image" src="assets/images/logo.svg" width="141" height="32" alt="zona's logotupe">
+			</a>
+
+			<nav class="nav hidden-mobile">
+				<ul class="nav__list">
+					<li>
+						<a href="#!">Home</a>
+					</li>
+
+					<li>
+						<a href="#!">Products</a>
+					</li>
+
+					<li>
+						<a href="#!">Shop</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="mobile-menu visible-mobile">
+				<input id="menu-switch" type="checkbox">
+				<label class="mobile-menu__burger" for="menu-switch">
+					<span></span>
+				</label>
+
+				<div class="mobile-menu__wrapper">
+					<nav class="mobile-menu__box">
+						<ul class="nav__list">
+							<li>
+								<a href="#!">Home</a>
+							</li>
+
+							<li>
+								<a href="#!">Products</a>
+							</li>
+
+							<li>
+								<a href="#!">Shop</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<main>
-
+		<section class="promo"></section>
 	</main>
 
 	<footer class="footer container">

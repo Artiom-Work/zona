@@ -1,0 +1,26 @@
+@use "../healpers" as *;
+@use "common-blocks/logo";
+@use "nav";
+@use "mobile-menu";
+
+.header {
+  height: var(--header-height);
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background-color: var(--top-bg-color);
+
+  .container {
+    @include flex-space-between;
+
+    height: inherit;
+  }
+}
+
+@include mobile-media {
+  .header {
+    .container {
+      padding-inline: rem(28);
+    }
+  }
+}

@@ -10,20 +10,11 @@
 // @use "./blocks/common-blocks/button";
 // @use "./blocks/common-blocks/section";
 //blocks
-@use "./blocks/header/header";
+@use "blocks/promo";
+
+@use "./blocks/header";
 // .header,
 // main > *:not(:last-child),
 // .footer {
 //   display: none !important;
 // }
-
-.font-family {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 100px;
-}
-.second-family {
-  font-family: var(--second-family);
-  font-weight: 600;
-  font-size: 100px;
-}

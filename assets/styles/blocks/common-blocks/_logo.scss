@@ -1,0 +1,26 @@
+@use "../../healpers" as *;
+
+.logo {
+  width: rem(141);
+  height: rem(32);
+
+  &__image {
+    width: inherit;
+    height: inherit;
+  }
+
+  @include hover {
+    filter: brightness(75%);
+  }
+
+  @include speciall-active {
+    scale: 0.98;
+  }
+}
+
+@include mobile-media {
+  .logo {
+    width: rem(68);
+    height: rem(15);
+  }
+}

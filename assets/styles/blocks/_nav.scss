@@ -1,0 +1,57 @@
+@use "../healpers" as *;
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: end;
+    gap: rem(28);
+
+    color: var(--color-text-light);
+    font-family: var(--font-family);
+    font-size: rem(22);
+    line-height: 1.81818;
+    font-weight: 600;
+
+    li {
+      padding: rem(10);
+    }
+
+    a {
+      position: relative;
+      text-decoration: none;
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+      @include speciall-active {
+        scale: 0.98;
+        filter: brightness(75%);
+      }
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition-duration: inherit;
+    }
+  }
+}
+
+@include mobile-media {
+  .nav {
+    &__list {
+      min-height: 50vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
