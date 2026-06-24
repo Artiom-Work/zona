@@ -1,14 +1,19 @@
 @use "../healpers" as *;
-@use "common-blocks/logo";
 @use "nav";
 @use "mobile-menu";
 
+/* ==== Block header ==== */
 .header {
   height: var(--header-height);
   position: sticky;
-  z-index: 1;
+  z-index: 2;
   top: 0;
-  background-color: var(--top-bg-color);
+  background-color: transparent;
+
+  animation-name: scrolling-sticky;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: rem(50) rem(75);
 
   .container {
     @include flex-space-between;
@@ -17,10 +22,6 @@
   }
 }
 
-@include mobile-media {
-  .header {
-    .container {
-      padding-inline: rem(28);
-    }
-  }
-}
+/* ============================ */
+/* ==== END  Block header  ==== */
+/* ============================ */

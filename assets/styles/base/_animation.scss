@@ -1,8 +1,9 @@
 @use "../healpers" as *;
-/* Animations */
+/* === Animations ===*/
 @keyframes scrolling-sticky {
   to {
-    // box-shadow: 0 0 10rem 1rem var(--color-black-opacity-80);
+    box-shadow: 0 0 10rem 1rem var(--color-dark-opasity-75);
+    background-color: var(--color-green);
   }
 }
 
@@ -36,5 +37,6 @@
 //     display: none;
 //   }
 // }
-/*  ===================================  */
-/*  ===================================  */
+/*  ======================= */
+/* ==== END Animations ==== */
+/*  ======================= */

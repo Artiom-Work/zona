@@ -1,4 +1,5 @@
 @use "../healpers" as *;
+/* ==== Globals styles ==== */
 
 html {
   &.is-lock {
@@ -15,21 +16,34 @@ body {
   font-family: var(--second-family);
   color: var(--color-dark);
   background-color: var(--color-light);
+
+  &:has(#menu-switch:checked) {
+    overflow: hidden;
+  }
 }
 main {
   flex-grow: 1;
   position: relative;
-  top: calc(var(--header-height) * -1);
+  // top: calc(var(--header-height) * -1);
 }
 //titles
 h1,
+.h1,
+h2,
+.h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
+}
+h1,
 .h1 {
   @include fluid-text(100, 40);
+
   line-height: 1;
 }
 h2,
 .h2 {
   @include fluid-text(60, 35);
+
   line-height: 1.2;
 }
 // h3,
@@ -63,9 +77,6 @@ svg * {
 a {
   color: inherit;
 
-  @include hover {
-    color: var(--color-accent);
-  }
   &[class] {
     text-decoration: none;
   }
@@ -84,3 +95,12 @@ button {
     }
   }
 }
+.accent-color {
+  color: var(--color-accent);
+}
+.secondary-accent-color {
+  color: var(--color-accent-secondary);
+}
+/* ============================ */
+/* ==== END Globals styles ==== */
+/* ============================ */

@@ -1,5 +1,5 @@
 @use "../healpers" as *;
-
+/* === Navigation block === */
 .nav {
   &__list {
     display: flex;
@@ -14,6 +14,9 @@
 
     li {
       padding: rem(10);
+      &:first-child {
+        padding-inline: rem(28);
+      }
     }
 
     a {

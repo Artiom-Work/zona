@@ -1,5 +1,5 @@
 @use "../healpers" as *;
-
+/* ==== Utils selectors ==== */
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   width: 100%;
@@ -111,3 +111,6 @@
 //     // scrollbar-color: var(--) transparent;
 //   }
 // }
+/* ============================== */
+/* ==== END  Utils selectors ==== */
+/* ============================== */

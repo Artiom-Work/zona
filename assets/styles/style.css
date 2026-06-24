@@ -1,34 +1,19 @@
-@charset "UTF-8";
-/**
-  Нормализация блочной модели
- */
+/* ==== Normolizing page ==== */
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
 
-/**
-	 Убираем внутренние отступы слева тегам списков,
-	 у которых есть атрибут class
-	*/
 :where(ul, ol) {
   padding-left: 0;
 }
 
-/**
-	 Убираем внешние отступы body и двум другим тегам,
-	 у которых есть атрибут class
-	*/
 body,
 :where(blockquote, figure):where([class]) {
   margin: 0;
 }
 
-/**
-	 Убираем внешние отступы вертикали нужным тегам,
-	 у которых есть атрибут class
-	*/
 :where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
   margin-block: 0;
 }
@@ -43,10 +28,6 @@ body,
   border: none;
 }
 
-/**
-	 Убираем стандартный маркер маркированному списку,
-	 у которого есть атрибут class
-	*/
 :where(ul[class]) {
   list-style: none;
 }
@@ -55,27 +36,15 @@ body,
   font-style: normal;
 }
 
-/**
-	 Обнуляем вертикальные внешние отступы параграфа,
-	 объявляем локальную переменную для внешнего отступа вниз,
-	 чтобы избежать взаимодействие с более сложным селектором
-	*/
 p {
   --paragraphMarginBottom: 24px;
   margin-block: 0;
 }
 
-/**
-	 Внешний отступ вниз для параграфа без атрибута class,
-	 который расположен не последним среди своих соседних элементов
-	*/
 p:where(:not([class]):not(:last-child)) {
   margin-bottom: var(--paragraphMarginBottom);
 }
 
-/**
-	 Упрощаем работу с изображениями и видео
-	*/
 img,
 video {
   display: block;
@@ -83,9 +52,6 @@ video {
   height: auto;
 }
 
-/**
-	 Наследуем свойства шрифт для полей ввода
-	*/
 input,
 textarea,
 select,
@@ -94,90 +60,46 @@ button {
 }
 
 html {
-  /**
-   Пригодится в большинстве ситуаций
-   (когда, например, нужно будет "прижать" футер к низу сайта)
-  */
   height: 100%;
-  /**
-   Убираем скачок интерфейса по горизонтали
-   при появлении / исчезновении скроллбара
-  */
   scrollbar-gutter: stable;
 }
 
-/**
-	 Плавный скролл
-	*/
 html,
 :has(:target) {
   scroll-behavior: smooth;
 }
 
 body {
-  /**
-   Пригодится в большинстве ситуаций
-   (когда, например, нужно будет "прижать" футер к низу сайта)
-  */
   min-height: 100%;
-  /**
-   Унифицированный интерлиньяж
-  */
   line-height: 1.5;
 }
 
-/**
-	 Нормализация высоты элемента ссылки при его инспектировании в DevTools
-	*/
 a:where([class]) {
   display: inline-flex;
 }
 
-/**
-	 Курсор-рука при наведении на элемент
-	*/
 button,
 label {
   cursor: pointer;
 }
 
-/**
-	 Приводим к единому цвету svg-элементы
-	 (за исключением тех, у которых уже указан
-	 атрибут fill со значением 'none' или начинается с 'url')
-	*/
 :where([fill]:not([fill=none], [fill^=url])) {
   fill: currentColor;
 }
 
-/**
-	 Приводим к единому цвету svg-элементы
-	 (за исключением тех, у которых уже указан
-	 атрибут stroke со значением 'none')
-	*/
 :where([stroke]:not([stroke=none], [stroke^=url])) {
   stroke: currentColor;
 }
 
-/**
-	 Чиним баг задержки смены цвета при взаимодействии с svg-элементами
-	*/
 svg * {
   transition-property: fill, stroke;
 }
 
-/**
-	 Приведение рамок таблиц в классический 'collapse' вид
-	*/
 :where(table) {
   border-collapse: collapse;
   border-color: currentColor;
 }
 
-/**
-	 Удаляем все анимации и переходы для людей,
-	 которые предпочитают их не использовать
-	*/
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
@@ -188,6 +110,10 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+/* ================================ */
+/* ==== END  Normolizing page  ==== */
+/* ================================ */
+/* ==== Fonts ==== */
 @font-face {
   font-family: "ClashDisplay";
   src: url("../fonts/ClashDisplay-Medium.woff2") format("woff2");
@@ -237,29 +163,52 @@ svg * {
   font-style: normal;
   font-display: swap;
 }
+/* ===================== */
+/* ==== END  Fonts  ==== */
+/* ===================== */
+/* ==== Variables ==== */
 :root {
   --color-light: #ffffff;
   --color-text-light: #f7f7f7;
   --color-dark: #221f1f;
   --color-dark-opasity-75: rgba(34, 31, 31, 0.75);
   --color-green: #34825b;
+  --color-green-dark: #1b7146;
   --color-red: #dc5d4a;
   --color-orange: #eb671d;
   --color-lima: #e5ea90;
   --color-manga: #f3e0a6;
   --color-guarana: #efdbc3;
-  --color-accent-1: var(--color-green);
-  --color-accent-2: var(--color-red);
+  --color-accent: var(--color-green);
+  --color-accent-secondary: var(--color-orange);
+  --color-accent-third: var(--color-red);
   --font-family: "ClashDisplay", sans-serif;
   --second-family: "RedHatDisplay", sans-serif;
+  --border-radius: 1.875rem;
+  --border-radius-extra-small: 0.3125rem;
+  --border-radius-small: 0.9375rem;
+  --border-radius-medium: 1.25rem;
+  --border-radius-large: 3.75rem;
   --container-width: 101.25rem;
-  --container-padding-x: 0.625rem;
-  --header-height: 5.625rem;
+  --container-padding-x: 1.75rem;
+  --header-height: 7.5rem;
   --transition-duration: 0.3s;
-  --top-bg-color-1: var(--color-green);
-  --top-bg-color: var(--top-bg-color-1);
+}
+@media (width <= 47.99875rem) {
+  :root {
+    --header-height: 5.625rem;
+  }
+}
+@media (width <= 26.87375rem) {
+  :root {
+    --container-padding-x: 0.625rem;
+  }
 }
 
+/* ========================= */
+/* ==== END  Variables  ==== */
+/* ========================= */
+/* ==== Utils selectors ==== */
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   width: 100%;
@@ -271,7 +220,7 @@ svg * {
   display: none !important;
 }
 
-@media (width <= 29.99875rem) {
+@media (width <= 26.87375rem) {
   .hidden-mobile-s {
     display: none !important;
   }
@@ -301,7 +250,7 @@ svg * {
   }
 }
 
-@media (width > 29.99875rem) {
+@media (width > 26.87375rem) {
   .visible-mobile-s {
     display: none !important;
   }
@@ -348,34 +297,48 @@ svg * {
   white-space: nowrap;
 }
 
+/* ============================== */
+/* ==== END  Utils selectors ==== */
+/* ============================== */
+/* ==== Globals styles ==== */
 html.is-lock {
   overflow: hidden;
 }
 
 body {
-  font-size: clamp(0.875rem, 0.7826923077rem + 0.4615384615vw, 1.25rem);
+  font-size: clamp(0.875rem, 0.7667785235rem + 0.4026845638vw, 1.25rem);
   display: flex;
   flex-direction: column;
   font-family: var(--second-family);
   color: var(--color-dark);
   background-color: var(--color-light);
 }
+body:has(#menu-switch:checked) {
+  overflow: hidden;
+}
 
 main {
   flex-grow: 1;
   position: relative;
-  top: calc(var(--header-height) * -1);
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
 }
 
 h1,
 .h1 {
-  font-size: clamp(2.5rem, 1.5769230769rem + 4.6153846154vw, 6.25rem);
+  font-size: clamp(2.5rem, 1.4177852349rem + 4.0268456376vw, 6.25rem);
   line-height: 1;
 }
 
 h2,
 .h2 {
-  font-size: clamp(2.1875rem, 1.8028846154rem + 1.9230769231vw, 3.75rem);
+  font-size: clamp(2.1875rem, 1.7365771812rem + 1.677852349vw, 3.75rem);
   line-height: 1.2;
 }
 
@@ -391,16 +354,6 @@ svg * {
 
 a {
   color: inherit;
-}
-@media (any-hover: hover) {
-  a:hover {
-    color: var(--color-accent);
-  }
-}
-@media (any-hover: hover) and (any-hover: none) {
-  a:active {
-    color: var(--color-accent);
-  }
 }
 a[class] {
   text-decoration: none;
@@ -421,14 +374,28 @@ button[aria-label]::before {
   content: "";
 }
 
-/* Animations */
-@keyframes scrolling-sticky {}
-/*  ===================================  */
-/*  ===================================  */
-.promo {
-  height: 67.5rem;
+.accent-color {
+  color: var(--color-accent);
 }
 
+.secondary-accent-color {
+  color: var(--color-accent-secondary);
+}
+
+/* ============================ */
+/* ==== END Globals styles ==== */
+/* ============================ */
+/* === Animations ===*/
+@keyframes scrolling-sticky {
+  to {
+    box-shadow: 0 0 10rem 1rem var(--color-dark-opasity-75);
+    background-color: var(--color-green);
+  }
+}
+/*  ======================= */
+/* ==== END Animations ==== */
+/*  ======================= */
+/* ==== Logo styles ==== */
 .logo {
   width: 8.8125rem;
   height: 2rem;
@@ -465,6 +432,37 @@ button[aria-label]::before {
     height: 2.5625rem;
   }
 }
+/* ========================= */
+/* ====END  Logo styles ==== */
+/* ========================= */
+/* ===  Buttons styles === */
+.button {
+  font-family: var(--font-family);
+  padding-block: 1.625rem;
+  padding-inline: 5.96875rem;
+  font-weight: 600;
+  font-size: 1.5625rem;
+  line-height: 1.6;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-radius: var(--border-radius-large);
+}
+@media (any-hover: hover) {
+  .button:hover {
+    filter: brightness(80%);
+  }
+}
+@media (any-hover: hover) and (any-hover: none) {
+  .button:active {
+    filter: brightness(80%);
+  }
+}
+.button:active {
+  scale: 0.97;
+  filter: brightness(60%);
+}
+
+/* === Navigation block === */
 .nav__list {
   display: flex;
   justify-content: end;
@@ -477,6 +475,9 @@ button[aria-label]::before {
 }
 .nav__list li {
   padding: 0.625rem;
+}
+.nav__list li:first-child {
+  padding-inline: 1.75rem;
 }
 .nav__list a {
   position: relative;
@@ -603,13 +604,17 @@ button[aria-label]::before {
   z-index: 2;
 }
 
-/* ====END-mobile-menu==== */
+/* ==== Block header ==== */
 .header {
   height: var(--header-height);
   position: sticky;
-  z-index: 1;
+  z-index: 2;
   top: 0;
-  background-color: var(--top-bg-color);
+  background-color: transparent;
+  animation-name: scrolling-sticky;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 3.125rem 4.6875rem;
 }
 .header .container {
   display: flex;
@@ -618,11 +623,260 @@ button[aria-label]::before {
   height: inherit;
 }
 
-@media (width <= 47.99875rem) {
-  .header .container {
-    padding-inline: 1.75rem;
+/* ============================ */
+/* ==== END  Block header  ==== */
+/* ============================ */
+/* === Promo slider's navigations === */
+.promo-swiper {
+  position: relative;
+}
+.promo-swiper__pagination {
+  position: absolute;
+  bottom: 3.5625rem;
+  left: calc(50% - 805px);
+  z-index: 10;
+  display: flex;
+  justify-content: start;
+  gap: 0.6875rem;
+}
+.promo-swiper__btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  background-color: var(--color-green-dark);
+  width: 4.6875rem;
+  height: 3.75rem;
+  border-radius: var(--border-radius-extra-small);
+}
+.promo-swiper__btn svg {
+  width: 2rem;
+  height: 1.375rem;
+  fill: var(--color-light);
+}
+@media (any-hover: hover) {
+  .promo-swiper__btn:hover {
+    filter: brightness(90%);
   }
 }
+@media (any-hover: hover) and (any-hover: none) {
+  .promo-swiper__btn:active {
+    filter: brightness(90%);
+  }
+}
+.promo-swiper__btn:active {
+  scale: 0.9;
+}
+
+@media (width <= 104.37375rem) {
+  .promo-swiper {
+    position: relative;
+  }
+  .promo-swiper__pagination {
+    left: var(--container-padding-x);
+  }
+}
+/* ==== Section promo ==== */
+.promo {
+  background-color: var(--color-accent);
+  padding-top: var(--header-height);
+  overflow: hidden;
+}
+.promo .container {
+  padding-block: clamp(0rem, -0.360738255rem + 1.3422818792vw, 1.25rem) 0;
+  position: relative;
+  display: flex;
+  gap: clamp(1.0625rem, 0.5394295302rem + 1.9463087248vw, 2.875rem);
+  color: var(--color-text-light);
+}
+.promo__body {
+  position: relative;
+  margin-block: 2.5rem 0;
+  width: 100%;
+}
+.promo__body-image {
+  height: clamp(4.9375rem, 3.7470637584rem + 4.4295302013vw, 9.0625rem);
+  width: clamp(4.9375rem, 3.7470637584rem + 4.4295302013vw, 9.0625rem);
+  margin-block: 0 2.5rem;
+}
+.promo__body-decor {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  translate: -100% 0;
+  height: clamp(3rem, 2.3326342282rem + 2.4832214765vw, 5.3125rem);
+  width: clamp(3rem, 2.3326342282rem + 2.4832214765vw, 5.3125rem);
+}
+.promo__title {
+  max-width: 48.0625rem;
+  padding-inline: 0 clamp(3rem, 2.3326342282rem + 2.4832214765vw, 5.3125rem);
+  margin-block: 0 0.875rem;
+}
+.promo__subtitle {
+  font-size: clamp(1rem, 0.567114094rem + 1.610738255vw, 2.5rem);
+  font-family: var(--font-family);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 2.2;
+  text-transform: uppercase;
+  margin-block: 0 0.625rem;
+}
+.promo__text {
+  font-weight: 800;
+  line-height: 1.5;
+  max-width: 26.5625rem;
+}
+.promo__figure {
+  position: relative;
+  max-width: 40.0625rem;
+  width: 100%;
+  display: flex;
+  justify-self: end;
+  padding-inline: 4.375rem 0;
+}
+.promo__figure-image {
+  width: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  height: clamp(32.5rem, 24.9244966443rem + 28.1879194631vw, 58.75rem);
+}
+.promo__figure-text {
+  font-size: clamp(1.875rem, 1.514261745rem + 1.3422818792vw, 3.125rem);
+  position: absolute;
+  bottom: 35%;
+  rotate: -90deg;
+  right: 57%;
+  font-family: var(--font-family);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: transparent;
+  white-space: nowrap;
+  opacity: 0.5;
+  -webkit-text-stroke: 0.09375rem var(--color-light);
+}
+.promo__decor {
+  position: absolute;
+  top: 35%;
+  left: 57%;
+  translate: -100%;
+  width: 26.6875rem;
+  height: 26.5625rem;
+}
+
+@media (width <= 104.37375rem) {
+  .promo__title {
+    font-size: clamp(2.5rem, 1.5981543624rem + 3.355704698vw, 5.625rem);
+  }
+  .promo__decor {
+    width: clamp(7.9375rem, 4.817114094rem + 11.610738255vw, 18.75rem);
+    height: clamp(7.9375rem, 4.817114094rem + 11.610738255vw, 18.75rem);
+    left: 47%;
+  }
+}
+@media (width <= 81.24875rem) {
+  .promo__title {
+    font-size: clamp(2.5rem, 1.9588926174rem + 2.0134228188vw, 4.375rem);
+  }
+  .promo__decor {
+    top: 30%;
+  }
+}
+@media (width <= 63.99875rem) {
+  .promo .container {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .promo__body {
+    display: flex;
+    flex-direction: column;
+    margin-block: 0;
+  }
+  .promo__body-image {
+    position: relative;
+    order: 1;
+    align-self: center;
+    left: 16%;
+    margin-block: 0;
+  }
+  .promo__body-decor {
+    left: 96%;
+    top: 100%;
+  }
+  .promo__title {
+    max-width: unset;
+    padding-inline: unset;
+    line-height: 1.15;
+    margin-block: 0 1rem;
+  }
+  .promo__subtitle {
+    margin-block: 0 0.3125rem;
+  }
+  .promo__text {
+    margin-block: 0 2rem;
+    max-width: unset;
+  }
+  .promo__figure {
+    padding-inline: 0;
+  }
+  .promo__decor {
+    top: 27%;
+    left: 36%;
+  }
+}
+/* ============================= */
+/* ==== END  Section promo  ==== */
+/* ============================= */
+/* ==== Section progress ==== */
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3.25rem, 2.6006711409rem + 2.4161073826vw, 5.5rem);
+  padding-block: clamp(5.5rem, 4.8687080537rem + 2.3489932886vw, 7.6875rem) 9rem;
+}
+.progress__image {
+  position: relative;
+  top: -1.125rem;
+  max-width: 13.75rem;
+  width: 100%;
+  height: clamp(6.125rem, 4.6459731544rem + 5.5033557047vw, 11.25rem);
+}
+.progress__button {
+  position: relative;
+  top: -0.625rem;
+}
+
+@media (width <= 104.37375rem) {
+  .progress {
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+  }
+  .progress__image {
+    position: absolute;
+    bottom: 0;
+    top: unset;
+    left: 100%;
+    translate: -100% 0;
+  }
+  .progress__button {
+    top: unset;
+  }
+}
+@media (width <= 47.99875rem) {
+  .progress {
+    overflow: hidden;
+  }
+  .progress__image {
+    left: calc(100% + 4.0625rem);
+  }
+}
+/* ================================ */
+/* ==== END  Section progress  ==== */
+/* ================================ */
+/* ==== Block footer ==== */
 .footer {
   padding-block: 3.75rem 3.4375rem;
 }
@@ -643,7 +897,7 @@ button[aria-label]::before {
   padding-right: 2.4375rem;
 }
 .footer__right a {
-  font-size: clamp(0.875rem, 0.7519230769rem + 0.6153846154vw, 1.375rem);
+  font-size: clamp(0.875rem, 0.730704698rem + 0.5369127517vw, 1.375rem);
   position: relative;
   text-decoration: none;
 }
@@ -690,7 +944,7 @@ button[aria-label]::before {
   padding: 0.625rem;
 }
 
-@media (width <= 101.24875rem) {
+@media (width <= 104.37375rem) {
   .footer__right {
     display: contents;
     padding-right: 0;
@@ -712,5 +966,8 @@ button[aria-label]::before {
     margin-top: 0.3125rem;
   }
 }
+/* ============================ */
+/* ==== END  Block footer  ==== */
+/* ============================ */
 
 /*# sourceMappingURL=style.css.map */

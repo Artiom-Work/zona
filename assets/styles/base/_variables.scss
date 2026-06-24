@@ -1,5 +1,5 @@
 @use "../healpers" as *;
-
+/* ==== Variables ==== */
 :root {
   --color-light: #ffffff;
   --color-text-light: #f7f7f7;
@@ -7,24 +7,40 @@
   --color-dark-opasity-75: rgba(34, 31, 31, 0.75);
 
   --color-green: #34825b;
+  --color-green-dark: #1b7146;
   --color-red: #dc5d4a;
   --color-orange: #eb671d;
   --color-lima: #e5ea90;
   --color-manga: #f3e0a6;
   --color-guarana: #efdbc3;
 
-  --color-accent-1: var(--color-green);
-  --color-accent-2: var(--color-red);
+  --color-accent: var(--color-green);
+  --color-accent-secondary: var(--color-orange);
+  --color-accent-third: var(--color-red);
 
   --font-family: "ClashDisplay", sans-serif;
   --second-family: "RedHatDisplay", sans-serif;
 
+  --border-radius: #{rem(30)};
+  --border-radius-extra-small: #{rem(5)};
+  --border-radius-small: #{rem(15)};
+  --border-radius-medium: #{rem(20)};
+  --border-radius-large: #{rem(60)};
+
   --container-width: #{rem(1620)};
-  --container-padding-x: #{rem(10)};
-  --header-height: #{rem(90)};
+  --container-padding-x: #{rem(28)};
+  --header-height: #{rem(120)};
 
   --transition-duration: 0.3s;
 
-  --top-bg-color-1: var(--color-green);
-  --top-bg-color: var(--top-bg-color-1);
+  @include mobile-media {
+    --header-height: #{rem(90)};
+  }
+
+  @include mobile-s-media {
+    --container-padding-x: #{rem(10)};
+  }
 }
+/* ========================= */
+/* ==== END  Variables  ==== */
+/* ========================= */

@@ -1,0 +1,24 @@
+@use "../../healpers" as *;
+
+/* ===  Buttons styles === */
+
+.button {
+  font-family: var(--font-family);
+  padding-block: rem(26);
+  padding-inline: rem(95.5);
+  font-weight: 600;
+  font-size: rem(25);
+  line-height: 1.6;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-radius: var(--border-radius-large);
+
+  @include hover {
+    filter: brightness(80%);
+  }
+
+  @include speciall-active {
+    scale: 0.97;
+    filter: brightness(60%);
+  }
+}

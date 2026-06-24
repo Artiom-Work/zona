@@ -1,5 +1,5 @@
 @use "../healpers" as *;
-@use "common-blocks/logo";
+/* ==== Block footer ==== */
 
 .footer {
   padding-block: rem(60) rem(55);
@@ -104,3 +104,6 @@
     }
   }
 }
+/* ============================ */
+/* ==== END  Block footer  ==== */
+/* ============================ */

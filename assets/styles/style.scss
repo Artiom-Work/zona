@@ -6,13 +6,13 @@
 @use "./base/globals";
 @use "./base/animation";
 //common-blocks
-// @use "./blocks/common-blocks/logo";
-// @use "./blocks/common-blocks/button";
+@use "./blocks/common-blocks/logo";
+@use "./blocks/common-blocks/buttons";
 // @use "./blocks/common-blocks/section";
 //blocks
-@use "blocks/promo";
-
 @use "./blocks/header";
+@use "blocks/promo";
+@use "blocks/progress";
 @use "./blocks/footer";
 // .header,
 // main > *:not(:last-child),
