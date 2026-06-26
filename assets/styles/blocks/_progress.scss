@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   gap: fluid(88, 52);
-  padding-block: fluid(123, 88) rem(144);
+  padding-block: fluid(123, 88) rem(57);
 
   &__image {
     position: relative;
@@ -45,6 +45,7 @@
 @include mobile-media {
   .progress {
     overflow: hidden;
+    padding-bottom: rem(144);
     &__image {
       left: calc(100% + #{rem(65)});
     }

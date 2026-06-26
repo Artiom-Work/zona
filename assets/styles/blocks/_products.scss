@@ -1,0 +1,103 @@
+@use "../healpers" as *;
+/* ==== Section products ==== */
+.products {
+  padding-block: 0 fluid(130, 100);
+
+  &__title {
+    @include fluid-text(220, 100);
+
+    padding-inline: fluid(90, 50);
+    letter-spacing: 0.06em;
+    text-align: right;
+    white-space: nowrap;
+    color: transparent;
+    line-height: 1.02;
+    opacity: 0.5;
+    -webkit-text-stroke: rem(1.5) var(--color-accent);
+    margin-bottom: rem(20);
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(28);
+  }
+
+  &__item {
+    max-width: rem(519);
+    width: 100%;
+    padding-inline: rem(20);
+    padding-block: 0 fluid(85, 60);
+    border-radius: var(--border-radius);
+    background-color: var(--color-lima);
+    text-align: center;
+
+    a {
+      position: relative;
+      text-decoration: none;
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      @include speciall-active {
+        filter: brightness(80%);
+      }
+    }
+
+    a:has(h3)::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      translate: -50%;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition-duration: inherit;
+    }
+  }
+
+  &__image {
+    margin-top: rem(-158);
+    margin-bottom: fluid(65, 48);
+    width: 100%;
+    min-height: fluid(544, 398);
+    object-fit: cover;
+  }
+
+  &__name {
+    margin-bottom: fluid(30, 27);
+    color: currentColor;
+  }
+
+  &__text {
+    line-height: 1.25;
+
+    p:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include tablet-media {
+  .products {
+    padding-top: rem(72);
+
+    &__list {
+      flex-direction: column;
+      gap: rem(199);
+    }
+
+    &__image {
+      margin-top: rem(-111);
+    }
+  }
+}
+/* ================================ */
+/* ==== END  Section products  ==== */
+/* ================================ */
