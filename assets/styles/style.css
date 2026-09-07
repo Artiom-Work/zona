@@ -983,9 +983,10 @@ button[aria-label]::before {
 /* ==== Section the-best ==== */
 .the-best {
   --container-padding-x: 0rem;
+  margin-bottom: 8.0625rem;
 }
 .the-best .container {
-  padding-block: clamp(6.3125rem, 5.8615771812rem + 1.677852349vw, 7.875rem) clamp(4.375rem, 3.1845637584rem + 4.4295302013vw, 8.5rem);
+  padding-block: clamp(5.1875rem, 4.4119127517rem + 2.8859060403vw, 7.875rem) clamp(4.375rem, 3.1845637584rem + 4.4295302013vw, 8.5rem);
   padding-inline: 6rem 0;
   display: flex;
   background-color: var(--color-yellow-light);
@@ -1127,6 +1128,9 @@ button[aria-label]::before {
   }
 }
 @media (width <= 47.99875rem) {
+  .the-best {
+    margin-bottom: 4.375rem;
+  }
   .the-best .container {
     row-gap: 4.3125rem;
   }
@@ -1179,6 +1183,170 @@ button[aria-label]::before {
 /* ================================ */
 /* ==== END  Section the-best  ==== */
 /* ================================ */
+/* ==== Section gallery ==== */
+.gallery {
+  margin-bottom: clamp(3.625rem, 1.4786073826rem + 7.9865771812vw, 11.0625rem);
+}
+.gallery figure {
+  margin: 0;
+}
+.gallery__header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 4.875rem;
+}
+.gallery__title {
+  margin-bottom: 0.8125rem;
+}
+.gallery__title a {
+  text-decoration: none;
+  position: relative;
+}
+.gallery__title a span {
+  color: var(--color-accent-third);
+}
+@media (any-hover: hover) {
+  .gallery__title a:hover::after {
+    width: 100%;
+  }
+}
+@media (any-hover: hover) and (any-hover: none) {
+  .gallery__title a:active::after {
+    width: 100%;
+  }
+}
+.gallery__title a:active {
+  scale: 0.98;
+  opacity: 0.5;
+}
+.gallery__title a::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50%;
+  width: 0;
+  height: 0.25rem;
+  background-color: currentColor;
+  transition-duration: inherit;
+  border-radius: 50%;
+}
+.gallery__title-label {
+  font-size: clamp(1rem, 0.927852349rem + 0.2684563758vw, 1.25rem);
+  color: var(--color-gray);
+}
+.gallery__decor {
+  width: 16.6875rem;
+  height: 16.6875rem;
+  position: absolute;
+  left: 1.875rem;
+  top: -1.25rem;
+}
+.gallery__swiper {
+  overflow: hidden;
+}
+.gallery__swiper .swiper-slide {
+  width: 18.625rem;
+  height: 21.9375rem;
+}
+.gallery__swiper .swiper-slide img {
+  opacity: 1;
+  transition-duration: var(--transition-duration);
+}
+.gallery__swiper .swiper-slide:not(.swiper-slide-active) img {
+  opacity: 0.3;
+}
+.gallery__swiper img {
+  border-radius: var(--border-radius-small);
+}
+
+@media (width <= 104.37375rem) {
+  .gallery__decor {
+    width: 8.34375rem;
+    height: 8.34375rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .gallery__header {
+    margin-bottom: 4.1875rem;
+  }
+  .gallery__title {
+    margin-bottom: 1.125rem;
+  }
+}
+/* =============================== */
+/* ==== END Section gallery  ===== */
+/* =============================== */
+/* ==== Block collage (part of section gallery)==== */
+.collage__list {
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: repeat(10, auto);
+}
+.collage__item:nth-child(1) {
+  grid-column: 1/4;
+  grid-row: 3/6;
+  justify-self: end;
+  align-self: end;
+  margin-bottom: 2.6875rem;
+  margin-right: 2.8125rem;
+}
+.collage__item:nth-child(2) {
+  grid-column: 4/9;
+  grid-row: 1/6;
+  margin-bottom: 2.6875rem;
+  margin-right: 2.75rem;
+}
+.collage__item:nth-child(3) {
+  grid-column: 9/12;
+  grid-row: 1/4;
+}
+.collage__item:nth-child(4) {
+  grid-column: 2/7;
+  grid-row: 6/11;
+  justify-self: end;
+  margin-right: 2.75rem;
+}
+.collage__item:nth-child(5) {
+  grid-column: 7/9;
+  grid-row: 6/8;
+  margin-right: 2.75rem;
+}
+.collage__item:nth-child(6) {
+  grid-column: 9/13;
+  grid-row: 4/8;
+  align-self: center;
+}
+.collage__item:nth-child(7) {
+  grid-column: 7/11;
+  grid-row: 8/11;
+  align-self: end;
+}
+.collage__item:nth-child(8) {
+  grid-column: 11/12;
+  grid-row: 8/10;
+  margin-top: 1.5625rem;
+}
+.collage__item img {
+  border-radius: var(--border-radius-small);
+}
+
+@media (width <= 104.37375rem) {
+  .collage__list {
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 0.75rem;
+  }
+  .collage__item:nth-child(1), .collage__item:nth-child(2), .collage__item:nth-child(3), .collage__item:nth-child(4), .collage__item:nth-child(5), .collage__item:nth-child(6), .collage__item:nth-child(7), .collage__item:nth-child(8) {
+    grid-area: auto;
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+  }
+}
+/* ============================ */
+/* ==== END Block collage ===== */
+/* ============================ */
 /* ==== Block footer ==== */
 .footer {
   padding-block: 3.75rem 3.4375rem;
@@ -1225,7 +1393,7 @@ button[aria-label]::before {
   left: 50%;
   translate: -50%;
   width: 0;
-  height: 2px;
+  height: 0.125rem;
   background-color: currentColor;
   transition-duration: inherit;
 }

@@ -1,0 +1,113 @@
+@use "../healpers" as *;
+/* ==== Section gallery ==== */
+.gallery {
+  margin-bottom: fluid(177, 58);
+
+  figure {
+    margin: 0;
+  }
+
+  &__header {
+    position: relative;
+    text-align: center;
+    margin-bottom: rem(78);
+  }
+
+  &__title {
+    margin-bottom: rem(13);
+
+    a {
+      text-decoration: none;
+      position: relative;
+
+      span {
+        color: var(--color-accent-third);
+      }
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      @include speciall-active {
+        scale: 0.98;
+        opacity: 0.5;
+      }
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: rem(4);
+      background-color: currentColor;
+      transition-duration: inherit;
+      border-radius: 50%;
+    }
+
+    &-label {
+      @include fluid-text(20, 16);
+
+      color: var(--color-gray);
+    }
+  }
+
+  &__decor {
+    @include square(rem(267));
+
+    position: absolute;
+    left: rem(30);
+    top: rem(-20);
+  }
+
+  &__swiper {
+    overflow: hidden;
+
+    .swiper-slide {
+      width: rem(298);
+      height: rem(351);
+
+      img {
+        opacity: 1;
+        transition-duration: var(--transition-duration);
+      }
+
+      &:not(.swiper-slide-active) {
+        img {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    img {
+      border-radius: var(--border-radius-small);
+    }
+  }
+}
+
+@include desktop-media {
+  .gallery {
+    &__decor {
+      @include square(rem(133.5));
+    }
+  }
+}
+
+@include mobile-media {
+  .gallery {
+    &__header {
+      margin-bottom: rem(67);
+    }
+
+    &__title {
+      margin-bottom: rem(18);
+    }
+  }
+}
+/* =============================== */
+/* ==== END Section gallery  ===== */
+/* =============================== */

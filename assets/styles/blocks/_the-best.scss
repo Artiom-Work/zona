@@ -4,8 +4,10 @@
 .the-best {
   --container-padding-x: #{rem(0)};
 
+  margin-bottom: rem(129);
+
   .container {
-    padding-block: fluid(126, 101) fluid(136, 70);
+    padding-block: fluid(126, 83) fluid(136, 70);
     padding-inline: rem(96) 0;
     display: flex;
     background-color: var(--color-yellow-light);
@@ -172,6 +174,8 @@
 }
 @include mobile-media {
   .the-best {
+    margin-bottom: rem(70);
+
     .container {
       row-gap: rem(69);
     }
