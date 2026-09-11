@@ -1,0 +1,183 @@
+@use "../healpers" as *;
+/* ==== Section advantages ==== */
+.advantages {
+  background-color: var(--color-yellow-light);
+
+  padding-block: fluid(132, 80) rem(80);
+  overflow: hidden;
+
+  &__header {
+    margin-bottom: rem(160);
+    text-align: center;
+  }
+
+  &__title {
+    max-width: rem(800);
+    margin-bottom: rem(30);
+    margin-inline: auto;
+  }
+
+  &__subtitle {
+    @include fluid-text(20, 16);
+
+    color: var(--color-gray);
+    line-height: 1.5;
+  }
+
+  &__body {
+    position: relative;
+    min-height: rem(515);
+  }
+
+  &__pictute {
+    position: absolute;
+    z-index: 1;
+    left: 24%;
+    top: -38%;
+    width: fluid(704, 459);
+    height: fluid(704, 459);
+
+    figure,
+    img {
+      width: inherit;
+      height: inherit;
+      rotate: 15deg;
+    }
+
+    svg {
+      position: absolute;
+      right: 16%;
+      bottom: 19%;
+      transform: scaleX(-1) rotate(146deg);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: rem(102);
+  }
+
+  &__item {
+    position: relative;
+    max-width: fluid(475, 340);
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-bottom: rem(10);
+    }
+
+    p {
+      color: var(--color-gray);
+      line-height: 1.5;
+    }
+
+    svg {
+      position: absolute;
+    }
+
+    &:nth-child(even) {
+      justify-self: end;
+    }
+
+    &:nth-child(1) svg {
+      top: 7%;
+      right: -18%;
+    }
+    &:nth-child(2) svg {
+      top: -8%;
+      left: -22%;
+    }
+    &:nth-child(3) svg {
+      top: -3%;
+      right: -14%;
+    }
+    &:nth-child(4) svg {
+      top: 13%;
+      left: -33%;
+    }
+  }
+}
+
+@include desktop-media {
+  .advantages {
+    &__item {
+      &:nth-child(1) svg {
+        right: -5%;
+      }
+      &:nth-child(2) svg {
+        left: -17%;
+      }
+      &:nth-child(3) svg {
+        right: 0;
+      }
+      &:nth-child(4) svg {
+        left: -25%;
+      }
+    }
+  }
+}
+@include laptop-media {
+  .advantages {
+    &__header {
+      margin-bottom: 0;
+    }
+
+    &__pictute {
+      position: static;
+      margin-inline: auto;
+
+      figure {
+        margin: 0;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(40);
+      padding-left: rem(5);
+    }
+
+    &__item {
+      max-width: unset;
+      text-align: center;
+
+      svg {
+        display: none;
+      }
+    }
+  }
+}
+@include mobile-media {
+  .advantages {
+    &__header {
+      margin-bottom: rem(7);
+    }
+
+    &__pictute {
+      position: relative;
+      left: -10%;
+      margin-bottom: rem(10);
+    }
+  }
+}
+@include mobile-medium-media {
+  .advantages {
+    &__item {
+      text-align: start;
+    }
+  }
+}
+@include mobile-s-media {
+  .advantages {
+    &__pictute {
+      left: -20%;
+    }
+  }
+}
+/* ================================= */
+/* ==== END Section advantages ===== */
+/* ================================= */
