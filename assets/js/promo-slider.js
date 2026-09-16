@@ -1,3 +1,4 @@
+/* promo-slider.js file */
 
 document.addEventListener('DOMContentLoaded', function () {
 	const datetimeSlider = new Swiper(".promoSwiper", {
@@ -16,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		},
 		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
+			nextEl: ".promoButtonNext",
+			prevEl: ".promoButtonPrev",
 		},
 	});
 

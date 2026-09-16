@@ -1,4 +1,4 @@
-
+/* gallery-slider.js file */
 document.addEventListener('DOMContentLoaded', function () {
 	const datetimeSlider = new Swiper(".gallerySwiper", {
 		slidesPerView: "auto",

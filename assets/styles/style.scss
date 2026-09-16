@@ -8,7 +8,6 @@
 //common-blocks
 @use "./blocks/common-blocks/logo";
 @use "./blocks/common-blocks/buttons";
-// @use "./blocks/common-blocks/section";
 //blocks
 @use "./blocks/header";
 @use "blocks/promo";
@@ -19,9 +18,5 @@
 @use "blocks/collage";
 @use "blocks/advantages";
 @use "blocks/consist";
+@use "blocks/reviews";
 @use "./blocks/footer";
-// .header,
-// main > *:not(:last-child),
-// .footer {
-//   display: none !important;
-// }

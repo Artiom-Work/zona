@@ -1,0 +1,300 @@
+@use "../healpers" as *;
+
+/* ==== Section reviews ==== */
+.reviews {
+  --reviewsSectionBgColor: var(--color-accent);
+
+  position: relative;
+  display: grid;
+  grid-template-columns: calc(50% + #{rem(-104)}) auto;
+  color: var(--color-light);
+
+  &__image {
+    justify-self: end;
+    max-width: rem(856);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &-wrapper {
+      background-color: var(--color-guarana);
+      width: 100%;
+    }
+  }
+
+  &__body {
+    overflow: hidden;
+    padding-block: fluid(84, 61) fluid(77, 67);
+    padding-inline: fluid(115, 20) fluid(200, 20);
+    background-color: var(--reviewsSectionBgColor);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(116.5, 36.5);
+
+    margin-bottom: fluid(40, 34);
+
+    svg {
+      margin-left: rem(50);
+    }
+  }
+
+  &__swiper {
+    overflow: hidden;
+    max-width: rem(800);
+
+    .swiper-slide {
+      padding-inline: rem(50) 0;
+    }
+  }
+
+  &__article {
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__text {
+    margin-bottom: fluid(44, 25);
+  }
+
+  &__name {
+    font-size: rem(22);
+    font-family: var(--font-family);
+    color: var(--color-text-light);
+    font-weight: 600;
+    line-height: 1.36364;
+  }
+
+  &__pagination {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: rem(9);
+    bottom: rem(13.5);
+    padding-inline: rem(31);
+    max-width: rem(740);
+
+    svg {
+      width: fluid(66, 39);
+      height: fluid(66, 39);
+    }
+
+    .reviews__switch:last-child svg {
+      rotate: 180deg;
+    }
+  }
+
+  &__switch {
+    @include reset-button;
+
+    z-index: 1;
+
+    svg {
+      fill: var(--color-dark);
+    }
+
+    @include hover {
+      filter: brightness(80%);
+    }
+
+    @include speciall-active {
+      scale: 0.95;
+    }
+  }
+
+  &__photos {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+    margin-inline: auto;
+    max-width: rem(1920);
+    width: 100%;
+
+    li {
+      position: absolute;
+    }
+    li:nth-child(1) {
+      top: rem(163);
+      left: rem(806);
+    }
+    li:nth-child(2) {
+      top: rem(197);
+      left: rem(1428);
+    }
+    li:nth-child(3) {
+      top: rem(111);
+      left: rem(1712);
+    }
+    li:nth-child(4) {
+      bottom: rem(62);
+      left: rem(954);
+    }
+    li:nth-child(5) {
+      bottom: rem(105);
+      left: rem(1800);
+    }
+  }
+
+  &__icon {
+    border-radius: 50%;
+
+    &-wrapper {
+    }
+  }
+}
+
+@include desktop-media {
+  .reviews {
+    &__image {
+      height: 100%;
+
+      &-wrapper {
+        overflow: hidden;
+        height: 100%;
+      }
+    }
+
+    &__body {
+    }
+
+    &__title {
+    }
+
+    &__swiper {
+    }
+
+    &__article {
+    }
+
+    &__text {
+    }
+
+    &__name {
+    }
+
+    &__photos {
+      li:nth-child(1) {
+        top: rem(163);
+        left: 42vw;
+      }
+      li:nth-child(2) {
+        top: rem(197);
+        left: 74.4vw;
+      }
+      li:nth-child(3) {
+        top: rem(111);
+        left: 89.1vw;
+      }
+      li:nth-child(4) {
+        bottom: rem(62);
+        left: 49.7vw;
+      }
+      li:nth-child(5) {
+        bottom: rem(105);
+        left: 93.7vw;
+      }
+    }
+
+    &__icon {
+      &-wrapper {
+      }
+    }
+  }
+}
+
+@include tablet-media {
+  .reviews {
+    --reviewsSectionBgColor: var(--color-accent-medium);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--reviewsSectionBgColor);
+
+    &__image {
+      margin-inline: auto;
+    }
+
+    &__body {
+      max-width: rem(1024);
+    }
+
+    &__title {
+      text-align: center;
+
+      svg {
+        margin-left: auto;
+        margin-right: auto;
+        width: rem(29);
+        height: rem(18);
+      }
+    }
+
+    &__swiper {
+      max-width: fluid(800, 285);
+      width: inherit;
+      text-align: center;
+      margin-bottom: rem(60);
+
+      .swiper-slide {
+        padding-inline: unset;
+      }
+    }
+
+    &__pagination {
+      justify-self: center;
+      top: 0;
+    }
+
+    &__photos {
+      li:nth-child(1) {
+        top: unset;
+        bottom: 40%;
+        left: 5vw;
+      }
+      li:nth-child(2) {
+        top: unset;
+        bottom: 40%;
+        left: 74.4vw;
+      }
+      li:nth-child(3) {
+        top: unset;
+        bottom: 14%;
+        left: 9.1vw;
+      }
+      li:nth-child(4) {
+        bottom: 2%;
+        left: 19.7vw;
+      }
+      li:nth-child(5) {
+        bottom: 8%;
+        left: 83.7vw;
+      }
+    }
+  }
+}
+
+@include mobile-media {
+  .reviews {
+    &__name {
+      font-size: rem(20);
+    }
+  }
+}
+
+@include mobile-medium-media {
+  .reviews {
+    &__image {
+      max-height: rem(344);
+      max-width: rem(390);
+    }
+  }
+}
+/* ============================== */
+/* ==== END Section reviews ===== */
+/* ============================== */

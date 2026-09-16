@@ -48,4 +48,14 @@
 		<path d="M42 27L22 27" stroke="#DC5D4A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
 		<path d="M42 39L22 39" stroke="#DC5D4A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
 	</symbol>
+
+	<symbol id="article-icon" viewBox="0 0 45 38" fill="none">
+		<path d="M11.5 0H21.5L14.5 38H0L11.5 0Z" fill="#F7F7F7"/>
+		<path d="M35 0H45L38 38H23.5L35 0Z" fill="#F7F7F7"/>
+	</symbol>
+
+	<symbol id="round-triangle" viewBox="0 0 66 66">
+		<circle cx="33" cy="33" r="33" transform="rotate(-180 33 33)" fill="white"/>
+		<path d="M24 33L37.5 22.6077L37.5 43.3923L24 33Z"/>
+	</symbol>
 </svg> 
