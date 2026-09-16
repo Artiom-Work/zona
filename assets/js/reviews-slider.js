@@ -1,6 +1,7 @@
-/* reviews-slider.js file */
+export function initReviewsSlider() {
+	const swiperEl = document.querySelector('.reviewsSwiper');
+	if (!swiperEl) return;
 
-document.addEventListener('DOMContentLoaded', function () {
 	const totalUserImages = 15;
 	const userIcons = document.querySelectorAll('.reviews__icon');
 
@@ -8,9 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const numbers = [];
 		while (numbers.length < count) {
 			const num = Math.floor(Math.random() * max) + 1;
-			if (!numbers.includes(num)) {
-				numbers.push(num);
-			}
+			if (!numbers.includes(num)) numbers.push(num);
 		}
 		return numbers;
 	}
@@ -22,22 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
-	const reviewsSlider = new Swiper(".reviewsSwiper", {
+	return new Swiper(swiperEl, {
 		slidesPerView: 1,
 		keyboard: true,
 		loop: true,
 		spaceBetween: 50,
 		centeredSlides: true,
-
 		navigation: {
 			nextEl: ".reviewsButtonNext",
 			prevEl: ".reviewsButtonPrev",
 		},
-
 		on: {
-			slideChange: function () {
-				shuffleUserIcons();
-			}
-		}
+			slideChange: shuffleUserIcons,
+		},
 	});
-});
+}
