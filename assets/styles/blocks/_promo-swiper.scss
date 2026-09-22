@@ -7,7 +7,7 @@
     position: absolute;
     bottom: rem(57);
     left: calc(50% - 805px);
-    z-index: 10;
+    z-index: 2;
     display: flex;
     justify-content: start;
     gap: rem(11);
@@ -15,6 +15,7 @@
 
   &__btn {
     @include reset-button;
+    @include flex-center;
 
     background-color: var(--color-green-dark);
     width: rem(75);
@@ -43,6 +44,13 @@
 
     &__pagination {
       left: var(--container-padding-x);
+    }
+  }
+}
+@include tablet-media {
+  .promo-swiper {
+    .swiper-wrapper {
+      align-items: end;
     }
   }
 }

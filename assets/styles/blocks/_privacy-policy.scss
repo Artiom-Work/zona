@@ -1,0 +1,50 @@
+@use "../healpers" as *;
+
+/* === Section privacy-policy === */
+main:has(section.privacy-policy) {
+  background-color: var(--color-accent);
+}
+
+.privacy-policy[aria-labelledby="privacy-policy-title"] {
+  padding-block: calc(var(--header-height) + rem(20));
+
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: fluid(50, 20);
+  }
+
+  h3 {
+    margin-bottom: fluid(30, 15);
+  }
+
+  a {
+    color: var(--color-accent-secondary);
+    font-weight: 700;
+
+    @include hover {
+      filter: brightness(90%);
+    }
+  }
+
+  hr {
+    max-width: fluid(600, 250);
+  }
+}
+
+.privacy-policy__text {
+  color: var(--color-light);
+  margin-bottom: fluid(30, 15);
+
+  &:first-of-type {
+    @include fluid-text(26, 20);
+
+    text-align: center;
+  }
+}
+/* ================================== */
+/* === End section privacy-policy === */
+/* ================================== */

@@ -1,0 +1,53 @@
+@use "../healpers" as *;
+
+/* === Section-error === */
+body:has(.section-error) {
+  .header {
+    background-color: var(--color-accent);
+  }
+}
+.section-error {
+  padding-block: calc(var(--header-height) + rem(20));
+  text-align: center;
+
+  &__image {
+    width: inherit;
+    height: inherit;
+
+    &-wrapper {
+      margin-inline: auto;
+      width: fluid(400, 200);
+      height: fluid(400, 200);
+    }
+  }
+  &__image-wrapper,
+  &__title,
+  &__subtitle {
+    margin-bottom: fluid(50, 20);
+  }
+
+  &__title {
+    @include fluid-text(200, 80);
+
+    line-height: 1;
+    color: var(--color-accent-medium);
+  }
+
+  &__subtitle {
+    @include fluid-text(40, 20);
+
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    font-family: var(--font-family);
+  }
+}
+@include mobile-media {
+  .section-error {
+    &__button {
+      padding: rem(15) rem(60);
+    }
+  }
+}
+/* ========================= */
+/* === End section-error === */
+/* ========================= */
