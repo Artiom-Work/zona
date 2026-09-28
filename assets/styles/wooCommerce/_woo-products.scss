@@ -1,0 +1,82 @@
+@use "../healpers" as *;
+
+/* ===== wooCommerce products ( shop page ) ===== */
+.woocommerce ul.products {
+  padding: fluid(30, 10);
+}
+
+.woocommerce-page {
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .woocommerce-LoopProduct-link {
+      position: relative;
+      background: var(--color-grad-product-card);
+      box-shadow: 0 rem(3) rem(10) 0 rgba(0, 0, 0, 0.25);
+      border-radius: var(--border-radius-medium);
+      padding-inline: rem(15);
+      padding-block: rem(30) rem(15);
+
+      @include hover {
+        scale: 1.02;
+        filter: brightness(90%);
+      }
+    }
+
+    span.onsale {
+      position: absolute;
+      background-color: var(--color-accent-third);
+    }
+
+    a.added_to_cart.wc-forward {
+      display: none;
+    }
+  }
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  @include fluid-text(26, 22);
+
+  color: var(--color-accent-secondary);
+}
+
+.woocommerce:where(body:not(.woocommerce-uses-block-theme))
+  ul.products
+  li.product
+  .price {
+  font-size: rem(22);
+
+  color: var(--color-accent);
+  font-weight: 700;
+
+  del span.woocommerce-Price-amount.amount {
+    color: var(--color-gray);
+  }
+}
+@include tablet-media {
+  .woocommerce-page {
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: rem(20);
+      row-gap: rem(50);
+    }
+  }
+  .woocommerce ul.products.columns-3 li.product,
+  .woocommerce-page ul.products.columns-3 li.product {
+    width: 45%;
+    margin: 0;
+  }
+}
+
+@include mobile-media {
+  .woocommerce ul.products.columns-3 li.product,
+  .woocommerce-page ul.products.columns-3 li.product {
+    width: 100%;
+  }
+}
+/* ========== END wooCommerce products ========== */

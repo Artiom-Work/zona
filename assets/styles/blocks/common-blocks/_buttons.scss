@@ -2,7 +2,14 @@
 
 /* ===  Buttons styles === */
 
-.button {
+.button,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+  a.button,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+  button.button.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+  #respond
+  input#submit {
   font-family: var(--font-family);
   padding-block: rem(27.5);
   padding-inline: rem(95.5);
@@ -15,10 +22,36 @@
 
   @include hover {
     filter: brightness(80%);
+    background-color: var(--color-accent);
+    color: var(--color-light);
   }
 
   @include speciall-active {
     scale: 0.97;
     filter: brightness(60%);
+  }
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+  a.button,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+  button.button.alt,
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+  #respond
+  input#submit {
+  padding-block: fluid(15, 10);
+  padding-inline: fluid(40, 20);
+  white-space: nowrap;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+  #respond
+  input#submit {
+  font-size: rem(20);
+}
+@include mobile-media {
+  .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+    a.button {
+    font-size: rem(20);
   }
 }

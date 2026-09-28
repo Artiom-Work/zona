@@ -19,6 +19,11 @@
 @use "blocks/advantages";
 @use "blocks/consist";
 @use "blocks/reviews";
-@use "./blocks/footer";
-@use "./blocks/privacy-policy";
-@use "./blocks/section-error";
+@use "blocks/footer";
+@use "blocks/privacy-policy";
+@use "blocks/section-error";
+@use "wooCommerce/general-woo";
+@use "wooCommerce/woo-elements";
+@use "wooCommerce/woo-products";
+@use "wooCommerce/woo-single-product";
+@use "wooCommerce/cart-widget";

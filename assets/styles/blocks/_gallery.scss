@@ -19,18 +19,22 @@
     a {
       text-decoration: none;
       position: relative;
+      color: var(--color-dark);
 
       span {
         color: var(--color-accent-third);
       }
 
       @include hover {
+        color: var(--color-dark);
+
         &::after {
           width: 100%;
         }
       }
 
       @include speciall-active {
+        color: var(--color-dark);
         scale: 0.98;
         opacity: 0.5;
       }

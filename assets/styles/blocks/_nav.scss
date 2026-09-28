@@ -1,6 +1,7 @@
 @use "../healpers" as *;
 /* === Navigation block === */
 .nav {
+  margin-inline: auto 0;
   &__list {
     display: flex;
     justify-content: end;

@@ -35,6 +35,7 @@
     height: rem(30);
 
     position: relative;
+    z-index: 12;
 
     &::before {
       @include abs-center;
@@ -75,6 +76,7 @@
 
   &__wrapper {
     position: absolute;
+    z-index: 10;
     right: 0;
     top: 0;
     width: 100%;

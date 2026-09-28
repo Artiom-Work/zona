@@ -39,6 +39,84 @@
 				</ul>
 			</nav>
 
+			<div class="cart-widget">
+				<input id="cart-switch" class="cart-widget__switch" type="checkbox">
+
+				<label class="cart-widget__button" for="cart-switch">
+					<svg width="40" height="40" aria-hidden="true" focusable="false">
+						<use xlink:href="./assets/images/icons/sprite-icons.svg#cart">
+						</use>
+					</svg>
+
+					<span class="visually-hidden">Open cart, items:</span>
+
+					<span class="cart-widget__count">
+						5
+					</span>
+				</label>
+
+				<div class="cart-widget__overlay"
+					onclick="if (!event.target.closest('.cart-widget__box')) document.getElementById('cart-switch').checked = false;">
+					<div class="cart-widget__box" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+						<header class="cart-widget__header">
+							<span id="cart-title">Your choice</span>
+
+							<button class="cart-widget__close-button" type="button" title="CLose cart"
+								onclick="document.getElementById('cart-switch').checked = false;">
+								<span class="visually-hidden">Close cart button</span>
+
+								<svg width="40" height="40" aria-hidden="true">
+									<use xlink:href="./assets/images/icons/sprite-icons.svg#round-close-icon">
+									</use>
+								</svg>
+							</button>
+
+						</header>
+
+						<div class="cart-widget__body widget_shopping_cart_content">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, aliquam pariatur. Possimus veniam
+							totam eius pariatur magnam obcaecati? Laboriosam accusamus alias, ipsum veritatis officia, impedit
+							voluptatum a soluta in reprehenderit, praesentium earum rem at explicabo necessitatibus fugit aspernatur
+							vero? Aliquam nulla in autem perferendis sequi quo dicta asperiores corporis eum necessitatibus! Ullam est
+							quisquam consequatur non, earum nesciunt corporis, sit cum explicabo itaque repudiandae iusto commodi
+							voluptates dolore ea, quasi ipsa quam dicta nisi libero voluptatem fugit! Libero ad unde voluptate
+							pariatur voluptatibus adipisci dolores autem perspiciatis corporis illo. Optio eaque rem quas qui
+							accusantium ea distinctio delectus, dolor error deleniti beatae quod et maxime suscipit voluptates illo
+							eum! Iste ut pariatur optio eum ipsa perferendis. Quas expedita, earum doloremque odit dolores provident
+							accusamus corrupti quis magni facere ipsum quidem suscipit officia nostrum maxime voluptate deserunt.
+							Eligendi dolorem est accusantium aliquid blanditiis fuga labore temporibus repellendus repudiandae
+							pariatur ullam minima reiciendis quidem fugiat dolor architecto, vero beatae in dolore, dicta tenetur
+							inventore iusto. Numquam mollitia totam, quasi repudiandae excepturi magnam beatae consequatur
+							necessitatibus voluptates aliquid accusantium perferendis temporibus saepe eos, sequi culpa voluptatem
+							exercitationem unde at fugiat, nihil labore explicabo molestias. Id, itaque beatae! Impedit tempora,
+							consectetur delectus quibusdam rem placeat architecto odio, consequuntur, laboriosam quasi aspernatur?
+							Asperiores enim quo doloremque exercitationem, reiciendis ea reprehenderit amet, debitis corporis, atque
+							soluta dolores. Voluptatibus, molestias reprehenderit eos sint tempore eligendi! Id officiis eveniet iste
+							non rem quasi, laudantium consectetur numquam impedit? Ullam vitae expedita nam mollitia iure assumenda
+							eaque deserunt quam neque magni error facilis accusamus totam, voluptatem vel architecto, eius explicabo!
+							Alias quas ex commodi delectus assumenda necessitatibus sequi aliquid omnis quos excepturi tempora, dicta
+							minima quisquam laboriosam reprehenderit vel rem saepe eveniet atque? Facere cum recusandae in eligendi ad
+							laudantium, similique sequi nulla, soluta libero suscipit, placeat excepturi iure at? Asperiores fugiat,
+							aperiam mollitia quisquam illo dolor, harum et facilis perferendis voluptates dignissimos magnam? Porro,
+							doloremque pariatur nisi natus exercitationem iure autem corporis! Aperiam sequi quasi, totam rem quaerat
+							nisi minus eaque ipsum, sit consequuntur qui quod suscipit repudiandae sint earum beatae optio quisquam
+							eos deleniti illum aliquam nulla dolore. Excepturi sed, nemo corrupti velit sapiente veniam ullam quae
+							alias dignissimos vero quo eius cumque repellendus libero! Doloribus, officia soluta corrupti sunt,
+							laborum aliquid facilis error dicta voluptas eaque cumque. Nihil, reprehenderit laborum optio sunt
+							deleniti unde molestias doloribus quod aspernatur iure, odit illum itaque eligendi cupiditate mollitia quo
+							animi aliquid iste earum sed facilis. Alias deserunt praesentium corrupti! Vero sint nobis amet,
+							consequuntur quas minus, deserunt quam ratione quia recusandae corporis ducimus molestiae quibusdam sequi
+							a atque, ex saepe? Necessitatibus ipsa, amet eos beatae ducimus possimus rerum nihil, officia voluptatibus
+							pariatur odio illo exercitationem ut voluptates veritatis dolores eius ipsam eligendi non dicta nesciunt
+							voluptatem minus. Inventore laborum, nam dolorem, natus, quae culpa adipisci itaque ipsum ad labore
+							tenetur assumenda voluptatum! Accusamus inventore animi, quia cupiditate consequuntur fugiat cum iste
+							magni ipsum voluptates molestiae nulla porro? Recusandae ea cum corporis nulla voluptatem quia, impedit
+							sequi, harum excepturi consectetur esse.
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="mobile-menu visible-mobile">
 				<input id="menu-switch" type="checkbox">
 
@@ -54,7 +132,7 @@
 							</li>
 
 							<li>
-								<a href="#products-title">Products</a>
+								<a href="#products-list">Products</a>
 							</li>
 
 							<li>
@@ -230,7 +308,7 @@
 		<section class="products container" aria-labelledby="products-title">
 			<h2 class="products__title hidden-mobile" id="products-title">Products</h2>
 
-			<ul class="products__list">
+			<ul class="products__list" id="products-list">
 				<li class="products__item" style="background-color: #EFDBC3;">
 					<a href="#!">
 						<img class="products__image" src="./assets/images/products/product-guarana.webp" width="519" height="544"
@@ -287,7 +365,9 @@
 			<div class="container">
 				<div class="the-best__body">
 					<div class="the-best__subtitle">
-						Award winning Hard Seltzer drink
+						<p>
+							Award winning Hard Seltzer drink
+						</p>
 					</div>
 
 					<h3 class="the-best__title h2" id="the-best-title">

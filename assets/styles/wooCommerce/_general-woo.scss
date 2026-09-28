@@ -1,0 +1,21 @@
+@use "../healpers" as *;
+/* ===== general-woo styles ===== */
+.woocommerce-breadcrumb {
+  display: none;
+}
+.woocommerce-page {
+  header.header {
+    background-color: var(--color-accent);
+  }
+
+  main {
+    padding-top: calc(var(--header-height) + rem(20));
+  }
+
+  .page-title {
+    margin-bottom: fluid(50, 30);
+    text-align: center;
+    color: var(--color-accent);
+  }
+}
+/* === End general-woo styles === */

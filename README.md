@@ -86,10 +86,22 @@ $\color{orange}\text{➡}$ Вёрстка и интеграция на сайт 
 
 $\color{orange}\text{➡}$ Вёрстка и интеграция на сайт страницы 404
 
-$\color{orange}\text{➡}$
+$\color{orange}\text{➡}$ Подключение и настройка плагина WooCommerce ( закрыть пункты настроек в админ-панели )
 
 $\color{orange}\text{➡}$
 
 $\color{orange}\text{➡}$
 
 $\color{orange}\text{➡}$
+
+## $\color{orange}\text{Основные страницы}$:
+
+$\color{orange}\text{➡}$ [**Homepage**](https://zona.artiom-mezheynikov.ru/)
+
+$\color{orange}\text{➡}$ [**Privacy policy**](https://zona.artiom-mezheynikov.ru/privacy-policy/)
+
+$\color{orange}\text{➡}$ [**404 page**](https://zona.artiom-mezheynikov.ru/404/)
+
+$\color{orange}\text{➡}$ [**Shop**](https://zona.artiom-mezheynikov.ru/shop/)
+
+$\color{orange}\text{➡}$ [**Product page**]()
