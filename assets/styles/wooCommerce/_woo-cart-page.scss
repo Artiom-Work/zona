@@ -1,0 +1,89 @@
+@use "../healpers" as *;
+/* ===== WooCommerce cart page styles ===== */
+.woocommerce-cart.woocommerce-page {
+  h1,
+  .wp-block-heading {
+    color: var(--color-accent);
+    text-align: center;
+  }
+  h2.wp-block-heading {
+    margin-bottom: fluid(50, 20);
+  }
+  .wp-block-product-new {
+    .wc-block-grid__products {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: rem(20);
+
+      li {
+        box-shadow: 0 rem(3) rem(10) 0 rgba(0, 0, 0, 0.25);
+        border-radius: var(--border-radius-medium);
+        padding: rem(10) rem(10) 0;
+
+        .wc-block-grid__product-link {
+          position: relative;
+          background: var(--color-grad-product-card);
+          box-shadow: 0 rem(3) rem(10) 0 rgba(0, 0, 0, 0.25);
+          border-radius: var(--border-radius-medium);
+          padding-inline: rem(15);
+          padding-block: rem(30) rem(15);
+          margin-bottom: rem(15);
+          @include hover {
+            scale: 1.02;
+            filter: brightness(90%);
+          }
+        }
+
+        .wc-block-grid__product-title {
+          @include fluid-text(26, 22);
+
+          color: var(--color-accent-secondary);
+        }
+        .wc-block-grid__product-price.price {
+          font-size: rem(22);
+
+          color: var(--color-accent);
+          font-weight: 700;
+
+          del span.woocommerce-Price-amount.amount {
+            color: var(--color-gray);
+          }
+        }
+        .wc-block-grid__product-rating {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@include tablet-media {
+  .woocommerce-cart.woocommerce-page {
+    .wp-block-product-new {
+      .wc-block-grid__products {
+        flex-direction: column;
+
+        li {
+          max-width: 75%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include mobile-medium-media {
+  .woocommerce-cart.woocommerce-page {
+    .wp-block-product-new {
+      .wc-block-grid__products {
+        flex-direction: column;
+
+        li {
+          max-width: 83%;
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
+/* === END WooCommerce cart page styles === */

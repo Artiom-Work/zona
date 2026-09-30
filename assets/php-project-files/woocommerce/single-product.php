@@ -9,6 +9,7 @@ while ( have_posts() ) :
     the_post();
 
     global $product;
+
     do_action( 'woocommerce_before_single_product' );
     ?>
 

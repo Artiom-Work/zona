@@ -9,7 +9,8 @@
   button.button.alt,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
   #respond
-  input#submit {
+  input#submit,
+.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link {
   font-family: var(--font-family);
   padding-block: rem(27.5);
   padding-inline: rem(95.5);
@@ -38,7 +39,9 @@
   button.button.alt,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
   #respond
-  input#submit {
+  input#submit,
+.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link,
+.woocommerce-mini-cart__buttons.buttons .button.checkout.wc-forward {
   padding-block: fluid(15, 10);
   padding-inline: fluid(40, 20);
   white-space: nowrap;
@@ -46,7 +49,8 @@
 
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
   #respond
-  input#submit {
+  input#submit,
+.woocommerce-mini-cart__buttons.buttons .button.checkout.wc-forward {
   font-size: rem(20);
 }
 @include mobile-media {

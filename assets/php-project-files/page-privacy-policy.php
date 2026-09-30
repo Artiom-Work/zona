@@ -1,71 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+/**
+	* Template Name: Template "Privacy policy"
+*/
+?>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="icon" type="image/svg+xml" sizes="16x16" href="./assets/images/icons/favicon.svg">
-	<link rel="icon" type="image/svg+xml" sizes="32x32" href="./assets/images/icons/favicon.svg">
-	<link rel="icon" type="image/svg+xml" sizes="48x48" href="./assets/images/icons/favicon.svg">
-	<link rel="apple-touch-icon" sizes="180x180" href="./assets/images/icons/favicon.svg">
-	<meta name="description"
-		content="🍃Refreshingly crisp. Naturally bold. Discover Zona — a new generation of sparkling soda crafted with real fruit and zero compromise on taste.🍹">
-	<title>ZONA | Privacy Policy</title>
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" href="./assets//styles/style.css">
-</head>
-
-<body>
-	<header class="header">
-		<div class="container">
-			<a class="logo" href="index.html">
-				<img class="logo__image" src="./assets/images/logo.svg" width="141" height="32" alt="zona's logotupe">
-			</a>
-
-			<nav class="nav hidden-mobile">
-				<ul class="nav__list">
-					<li>
-						<a href="./index.html">Home</a>
-					</li>
-
-					<li>
-						<a href="#products-title">Products</a>
-					</li>
-
-					<li>
-						<a href="#!">Shop</a>
-					</li>
-				</ul>
-			</nav>
-
-			<div class="mobile-menu visible-mobile">
-				<input id="menu-switch" type="checkbox">
-
-				<label class="mobile-menu__burger" for="menu-switch">
-					<span></span>
-				</label>
-
-				<div class="mobile-menu__wrapper" onclick="document.getElementById('menu-switch').checked = false;">
-					<nav class="mobile-menu__box">
-						<ul class="nav__list">
-							<li>
-								<a href="./index.html">Home</a>
-							</li>
-
-							<li>
-								<a href="#products-title">Products</a>
-							</li>
-
-							<li>
-								<a href="#!">Shop</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
+<?php get_header(); ?>
 
 	<main>
 		<h1 class="visually-hidden">Privacy Policy of Zona's product site</h1>
@@ -221,44 +160,4 @@
 		</section>
 	</main>
 
-	<footer class="footer">
-		<div class="container">
-			<a class="footer__logo logo logo--footer" href="index.html">
-				<img class="logo__image" src="./assets/images/logo-dark-big.svg" width="183" height="41" alt="zona's logotupe">
-			</a>
-
-			<div class="footer__right">
-				<a class="footer__copyright" href="#!" target="_blank" rel="noopener noreferrer">
-					Copyright 2025&nbsp;- Zoma&nbsp;- All rights reserved
-				</a>
-
-				<nav class="footer__nav">
-					<ul>
-						<li>
-							<a href="#!">
-								Guarana
-							</a>
-						</li>
-
-						<li>
-							<a href="#!">
-								Yuzu &amp;&nbsp;Lima
-							</a>
-						</li>
-
-						<li>
-							<a href="#!">
-								Manga
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</footer>
-
-	<script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
-	<script type="module" src="./assets/js/main.js"></script>
-</body>
-
-</html>
+<?php get_footer(); ?>

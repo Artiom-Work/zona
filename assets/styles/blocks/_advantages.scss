@@ -105,13 +105,14 @@
   .advantages {
     &__item {
       &:nth-child(1) svg {
-        right: -5%;
+        right: -20%;
       }
       &:nth-child(2) svg {
         left: -17%;
       }
       &:nth-child(3) svg {
-        right: 0;
+        top: rem(-30);
+        right: -7%;
       }
       &:nth-child(4) svg {
         left: -25%;
